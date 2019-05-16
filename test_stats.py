@@ -10,8 +10,8 @@ def steam_leaf(array_of_dat):
         first_digit = first_n_digits(num)
         print(str(d))
 
-        if num in range((first_digit * 10) - 9, (first_digit * 10)):
-            d[str(first_digit)] = str(num)
+        if num in range(0,20):
+            d.append(num)
 
     return d
 
