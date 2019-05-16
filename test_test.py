@@ -2,13 +2,14 @@ from collections import defaultdict
 
 
 def steam_leaf(data):
-    d = defaultdict(list)
+    stem_and_leaf = defaultdict(list)
     for numbers in data:
         first_dig = int(str(numbers)[:1])
-        if numbers not in d:
-            d[first_dig].append(int(str(numbers)[1::]))
+        steam = int(str(numbers)[1::])
+        if steam not in stem_and_leaf[first_dig]:
+            stem_and_leaf[first_dig].append(steam)
 
-    return d
+    return stem_and_leaf
 
 
-print(steam_leaf([11, 12, 14, 23,32,24]))
+print(steam_leaf([11, 12, 12, 12, 21, 33]))
